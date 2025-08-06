@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cancer Awareness | HOPE HUB</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(to right, #fff, #e8f0fe);
+      font-family: 'Segoe UI', sans-serif;
+    }
+    .section {
+      padding: 50px 20px;
+    }
+    h2 {
+      color: #004c9e;
+      font-weight: bold;
+    }
+    ul {
+      list-style-type: square;
+    }
+    .navbar {
+      padding: 15px 30px;
+    }
+    .btn-signup {
+      background-color: #0069d9;
+      color: white;
+      border-radius: 30px;
+      padding: 10px 20px;
+      font-size: 16px;
+      margin-left: 10px;
+    }
+    .btn-signup:hover {
+      background-color: #004c9e;
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand fw-bold" href="{{ url_for('index') }}">🧬 HOPE HUB</a>
+  <div class="ms-auto">
+    <a href="{{ url_for('detect') }}" class="btn btn-signup">Detection</a>
+    <a href="{{ url_for('logout') }}" class="btn btn-signup">Logout</a>
+  </div>
+</nav>
+
+<div class="container section">
+  <h2 class="mb-4 text-center">🩺 Cancer Awareness & Early Detection</h2>
+  
+  <div class="mb-5">
+    <h4>🔍 Common Cancer Symptoms</h4>
+    <ul>
+      <li>Unexplained weight loss</li>
+      <li>Fatigue or weakness</li>
+      <li>Persistent cough or hoarseness</li>
+      <li>Unusual bleeding or discharge</li>
+      <li>Lumps or thickening in any area of the body</li>
+      <li>Changes in bowel or bladder habits</li>
+      <li>Skin changes, moles growing or bleeding</li>
+    </ul>
+  </div>
+
+  <div class="mb-5">
+    <h4>🧬 Common Types of Cancer</h4>
+    <ul>
+      <li><strong>Skin Cancer</strong> – Often caused by sun exposure or UV radiation.</li>
+      <li><strong>Brain Tumors</strong> – Can be malignant or benign and may affect memory, vision, or motor skills.</li>
+      <li><strong>Lung Cancer</strong> – Strongly associated with smoking or pollution.</li>
+      <li>Breast, Prostate, Colon, and Cervical cancers are also among the most common worldwide.</li>
+    </ul>
+  </div>
+
+  <div class="mb-5">
+    <h4>🛡️ Prevention Tips</h4>
+    <ul>
+      <li>Avoid tobacco and limit alcohol intake</li>
+      <li>Eat a healthy diet rich in fruits and vegetables</li>
+      <li>Maintain a healthy weight and exercise regularly</li>
+      <li>Protect your skin from UV rays</li>
+      <li>Get vaccinated (e.g., HPV, Hepatitis B)</li>
+      <li>Get regular health check-ups and screenings</li>
+    </ul>
+  </div>
+
+  <div class="mb-5">
+    <h4>📅 Recommended Screening</h4>
+    <ul>
+      <li>Skin checks every 6–12 months (especially if you're at high risk)</li>
+      <li>Annual low-dose CT scan for smokers (lung cancer)</li>
+      <li>Routine brain MRIs if you experience neurological symptoms</li>
+      <li>Mammograms, colonoscopies, Pap tests depending on gender/age</li>
+    </ul>
+  </div>
+
+  <div>
+    <h4>🌐 Trusted Resources</h4>
+    <ul>
+      <li><a href="https://www.cancer.org/" target="_blank">American Cancer Society</a></li>
+      <li><a href="https://www.who.int/health-topics/cancer" target="_blank">World Health Organization: Cancer</a></li>
+      <li><a href="https://www.nhs.uk/conditions/cancer/" target="_blank">NHS: Cancer Information</a></li>
+    </ul>
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cancer Detection Portal</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(to right, #fff, #e8f0fe);
+      font-family: 'Segoe UI', sans-serif;
+    }
+    .hero {
+      height: 90vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+    }
+    .btn-signup {
+      background-color: white;
+      color: #004c9e;
+      border-radius: 30px;
+      padding: 12px 30px;
+      font-size: 15px;
+    }
+    .btn-signup:hover {
+      background-color: #b7dee4;
+    }
+    .news-section {
+      background: #f5f5f5;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    .news-title {
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+    .news-item {
+      font-size: 16px;
+      margin-bottom: 10px;
+      color: #444;
+    }
+    .btn-danger{
+      border-radius: 68px;
+    
+      
+    }
+    .btn-outline-primary{
+      color: whitesmoke;
+      border-radius: 5px;
+      font-size: 25px;
+      background-color: #004c9e;
+     
+    }
+   
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light px-5" style="background: linear-gradient(to right, #2c3e50, #3498db)">
+ <header style="padding: 20px 0; text-align: center; border-radius: 50px;">
+  <a href="{{ url_for('index') }}" 
+     style="text-decoration: none; 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            font-size: 36px; 
+            color: #ffffff; 
+            letter-spacing: 2px; 
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.4); border-radius: 50px;"
+             >
+    🔬 Hope Hub
+  </a>
+  <p style="color: #ecf0f1; font-size: 16px; margin-top: 5px;">
+    Early Detection, Timely Action – Empowering Health through AI
+  </p>
+</header>
+
+
+  <div class="ms-auto">
+    <a href="/signup" class="btn btn-signup">Get Started</a>
+     <a href="{{ url_for('awareness') }}" class="btn btn-signup">Cancer Awareness</a>
+     <a href="{{ url_for('view_dataset') }}" class="btn btn-signup">Public Dataset</a>
+
+
+    <a href="{{ url_for('logout') }}" class="btn btn-signup">Logout</a>
+    
+
+  </div>
+</nav>
+
+<div class="hero">
+  <h1 class="display-5 fw-bold">Early Detection Saves Lives</h1>
+  <p class="lead">Upload your medical scans for skin, brain, or lung cancer prediction powered by AI.</p>
+  <div class="mt-4">
+  
+    <a href="/detect" class="btn btn-outline-primary">Detect Now</a>
+  </div>
+</div>
+<!-- After your hero section -->
+<div class="news-section container mt-5">
+  <h2 class="news-title text-center mb-4">📰 Latest Cancer & Health News</h2>
+  {% if news %}
+    <div class="row justify-content-center">
+      {% for item in news %}
+      <div class="col-md-8 mb-3">
+        <div class="news-item p-3 bg-light rounded">
+          <a href="{{ item.url }}" target="_blank" class="h5 text-decoration-none">{{ item.title }}</a>
+          <p class="text-muted mt-2">{{ item.description or "" }}</p>
+          <small class="text-secondary">{{ item.source.name }} &bull; {{ item.publishedAt[:10] }}</small>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  {% else %}
+    <p class="text-center text-muted">No news available at the moment.</p>
+  {% endif %}
+</div>
+
+
+<footer style="background-color: #222; color: white; padding: 20px; text-align: center;">
+    <h3>About Our Team</h3>
+    <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 30px; margin-top: 15px;">
+        <div>
+            <h4>Anam</h4>
+            <p>ML Developer<br>B.Tech CSE</p>
+        </div>
+        <div>
+            <h4>Pratistha</h4>
+            <p>Front End Engineer<br>B.Tech CSE</p>
+        </div>
+        <div>
+            <h4>Chitransh Anand Srivastava</h4>
+            <p>Backend Engineer<br>B.Tech CSE</p>
+        </div>
+        <div>
+            <h4>Dhruv Saxena</h4>
+            <p>Project lead<br>B.Tech CSE</p>
+        </div>
+    </div>
+    <p style="margin-top: 20px;">&copy; 2025 Hope HUB. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

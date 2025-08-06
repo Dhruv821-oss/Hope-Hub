@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Research Dataset</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        .image-box {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px;
+            width: 250px;
+        }
+        .image-box img {
+            max-width: 100%;
+            height: auto;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .btn-success
+        {
+         background-color: blue;
+         color: white;
+        }
+    </style>
+</head>
+<body>
+    <h2 style="text-align:center;">Uploaded Dataset for Research</h2>
+    </div>
+    <div style="text-align: center; margin: 20px;">
+    <a href="{{ url_for('download_dataset') }}" 
+       class="btn btn-success" 
+       style="padding: 10px 20px; font-size: 16px;">
+       ⬇️ Download Full Dataset (ZIP)
+    </a>
+</div>
+    <div class="container">
+        {% for entry in entries %}
+        <div class="image-box">
+            <img src="{{ entry.image_path }}" alt="Uploaded Image">
+            <p><strong>Name:</strong> {{ entry.name }}</p>
+            <p><strong>Email:</strong> {{ entry.email }}</p>
+            <p><strong>Age:</strong> {{ entry.age }}</p>
+            <p><strong>Cancer Type:</strong> {{ entry.cancer_type }}</p>
+            <p><strong>Prediction:</strong> {{ entry.prediction }}</p>
+            <p><strong>Uploaded At:</strong> {{ entry.timestamp }}</p>
+        </div>
+        {% endfor %}
+    
+
+</body>
+</html>

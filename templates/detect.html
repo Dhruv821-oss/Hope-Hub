@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cancer Detection</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f2f7ff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: start;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: white;
+            margin-top: 60px;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            width: 400px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        label, select, input, button {
+            display: block;
+            width: 100%;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        input[type="file"] {
+            border: 1px solid #ccc;
+            padding: 10px;
+            background-color: #fafafa;
+        }
+
+        select, button {
+            padding: 10px;
+            border-radius: 6px;
+        }
+
+        button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            transition: background-color 0.3s ease;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .prediction, .error, .download-link {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .prediction h3 {
+            color: #28a745;
+        }
+
+        .error p {
+            color: red;
+        }
+
+        .download-link a {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #17a2b8;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+        }
+
+        .download-link a:hover {
+            background-color: #117a8b;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Cancer Image Detection</h2>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    {% for category, message in messages %}
+      <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+        {{ message }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+        <form action="{{ url_for('predict') }}" method="POST" enctype="multipart/form-data">
+            <label for="cancer_type">Select Cancer Type:</label>
+            <select name="cancer_type" id="cancer_type">
+                <option value="Skin">Skin</option>
+                <option value="Brain">Brain</option>
+                <option value="Lung">Lung</option>
+            </select>
+
+            <label for="image">Upload Image:</label>
+            <input type="file" name="image" id="image" required>
+
+            <button type="submit">Predict</button>
+
+        </form>
+        <a href="{{ url_for('index') }}">Go to Home</a>
+
+
+        {% if prediction %}
+        <div class="prediction">
+            <h3>Prediction Result: {{ prediction }}</h3>
+        </div>
+        <div class="download-link">
+            <a href="{{ report_url }}" target="_blank">Download Report (PDF)</a>
+        </div>
+        {% endif %}
+
+        {% if error %}
+        <div class="error">
+            <p>{{ error }}</p>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
