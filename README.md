@@ -92,9 +92,14 @@ models/
 ```
 
 ---
-
-
-
+<img width="1900" height="907" alt="Screenshot 2025-08-07 010907" src="https://github.com/user-attachments/assets/d5b7f0d4-2b26-4f44-9c01-5af6341fba66" />
+<img width="1903" height="884" alt="Screenshot 2025-08-07 010920" src="https://github.com/user-attachments/assets/5d7b4a1a-a424-4dcb-8b79-f5facda2e3bf" />
+<img width="1824" height="905" alt="Screenshot 2025-08-07 010933" src="https://github.com/user-attachments/assets/bc384c5a-fc6c-45ff-90db-fd985454f22a" />
+<img width="1911" height="891" alt="Screenshot 2025-08-07 010952" src="https://github.com/user-attachments/assets/e192b28e-960f-4ee1-9c57-8367df117472" />
+<img width="1905" height="864" alt="Screenshot 2025-08-07 011114" src="https://github.com/user-attachments/assets/724f3f67-5e6a-4c3e-b258-8ef175f05347" />
+<img width="1914" height="967" alt="Screenshot 2025-08-07 011126" src="https://github.com/user-attachments/assets/3c0d78c3-7761-497d-ad63-4602169098a4" />
+<img width="1895" height="931" alt="Screenshot 2025-08-07 011143" src="https://github.com/user-attachments/assets/008d604a-01c9-4946-807f-a237a551c5aa" />
+<img width="1905" height="890" alt="Screenshot 2025-08-07 011155" src="https://github.com/user-attachments/assets/343334ed-05a4-414b-87c6-efa9aa73a651" />
 ## 🙏 Credits
 
 Created by [Dhruv](https://github.com/Dhruv821-oss)
